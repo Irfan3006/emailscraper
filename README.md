@@ -1,7 +1,7 @@
 # emailscraper
 Ini adalah alat untuk melacak email dari sebuah website
 
-# tutorial
+# Tutorial
 git clone https://github.com/Irfan3006/emailscraper.git
 
 cd emailscraper
