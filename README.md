@@ -5,6 +5,7 @@ Ini adalah alat untuk melacak email dari sebuah website
 git clone https://github.com/Irfan3006/emailscraper.git
 
 cd emailscraper
+
 python3 emailscraper.py
 
 # Hasil
