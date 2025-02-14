@@ -22,7 +22,7 @@ This project is an optimized email scraper written in Python. It crawls through 
 1. **Clone the repository:**
 
    ```bash
-   git clone [https://github.com/Irfan3006/email-scraper.git](https://github.com/Irfan3006/emailscraper.git)
+   git clone https://github.com/Irfan3006/emailscraper.git
    cd emailscraper
    ```
 
