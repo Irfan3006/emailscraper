@@ -56,7 +56,7 @@ Contributions are welcome! Feel free to fork the repository and submit pull requ
 
 ## License
 
-Distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+Distributed under the MIT License. See the [LICENSE](https://opensource.org/license/mit) file for more information.
 
 
 Feel free to modify this tutorial to suit your project and add any additional details you find necessary!
