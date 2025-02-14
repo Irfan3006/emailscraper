@@ -17,18 +17,18 @@ def crawl_emails(start_url, max_pages):
             continue
         scraped_urls.add(url)
         count += 1
-        print(f'{count} Sedang Membaca {url}')
+        print(f'{count} Reading {url}')
 
         try:
             response = requests.get(url)
         except (requests.exceptions.MissingSchema, requests.exceptions.ConnectionError):
             continue
 
-        # Cari email menggunakan regex
+        # Find emails using regex
         new_emails = set(re.findall(r'[a-z0-9\.\-+_]+@\w+\.[a-z\.]+', response.text, re.I))
         emails.update(new_emails)
 
-        # Cari link-link baru menggunakan BeautifulSoup dan bentuk URL absolut
+        # Find new links using BeautifulSoup and form absolute URLs
         soup = BeautifulSoup(response.text, 'html.parser')
         for anchor in soup.find_all('a', href=True):
             link = anchor['href']
@@ -40,8 +40,8 @@ def crawl_emails(start_url, max_pages):
 
 def main():
     print(pyfiglet.figlet_format("RED--CHIKA", font="slant"))
-    start_url = input('[+] Silahkan Masukan URL : ')
-    max_pages = int(input('[+] Masukan Jumlah Halaman Yang Akan Dibaca : '))
+    start_url = input('[+] Please enter the URL: ')
+    max_pages = int(input('[+] Please enter the number of pages to crawl: '))
     
     try:
         emails = crawl_emails(start_url, max_pages)
@@ -50,7 +50,7 @@ def main():
         return
 
     print('\nHacking Successful!')
-    print(f'\n{len(emails)} email ditemukan\n====================================')
+    print(f'\n{len(emails)} emails found\n====================================')
     for email in emails:
         print('  ' + email)
     print()
