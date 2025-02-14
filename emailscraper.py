@@ -25,7 +25,7 @@ def crawl_emails(start_url, max_pages):
             continue
 
         # Find emails using regex
-        new_emails = set(re.findall(r'[a-z0-9\.\-+_]+@\w+\.[a-z\.]+', response.text, re.I))
+        new_emails = set(re.findall(r'[a-z0-9\.-+_]+@\w+\.[a-z\.]+', response.text, re.I))
         emails.update(new_emails)
 
         # Find new links using BeautifulSoup and form absolute URLs
@@ -39,7 +39,7 @@ def crawl_emails(start_url, max_pages):
     return emails
 
 def main():
-    print(pyfiglet.figlet_format("RED--CHIKA", font="slant"))
+    print(pyfiglet.figlet_format("HEXA", font="slant"))
     start_url = input('[+] Please enter the URL: ')
     max_pages = int(input('[+] Please enter the number of pages to crawl: '))
     
@@ -49,7 +49,7 @@ def main():
         print('[-] Closing!!')
         return
 
-    print('\nHacking Successful!')
+    print('\nCrawling Successful!')
     print(f'\n{len(emails)} emails found\n====================================')
     for email in emails:
         print('  ' + email)
